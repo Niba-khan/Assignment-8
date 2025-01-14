@@ -25,15 +25,15 @@ export default async function BlogPage({ params }: { params: { slug: string } })
   }
 
   return (
-    <article className="mt-12 mb-24 px-4 flex flex-col gap-y-8">
+    <article className="mt-12 mb-24 px-4 flex flex-col gap-y-8 text-white">
 
-      <h1 className="text-3xl lg:text-5xl font-bold text-dark dark:text-light">
+      <h1 className="text-5xl lg:text-7xl font-bold text-White">
         {post.title}
       </h1>
 
 
       <Image
-        src={urlForImage(post.image)}
+        src={urlForImage(post.image).url()}
         width={800}
         height={500}
         alt={post.title}
@@ -41,31 +41,29 @@ export default async function BlogPage({ params }: { params: { slug: string } })
       />
 
       <section>
-        <h2 className="text-2xl font-bold uppercase text-accentDarkPrimary">Summary</h2>
-        <p className="text-lg leading-relaxed text-dark/80 dark:text-light/80">
+        <h1 className="text-4xl font-bold uppercase text-white">Travel`s Guide:</h1>
+        <p className="text-lg text-white ">
           {post.summary}
         </p>
       </section>
 
- 
+      <section className="prose dark:prose-invert text-white">
+        <PortableText value={post.content} />
+      </section>
       <section className="flex gap-4 items-center">
         <Image
-          src={urlForImage(post.author.image)}
+          src={urlForImage(post.author.image).url()}
           width={50}
           height={50}
           alt={post.author.name}
           className="rounded-full"
         />
-        <div>
-          <h3 className="text-xl font-bold text-dark dark:text-light">{post.author.name}</h3>
-          <p className="text-sm italic text-dark/80 dark:text-light/80">{post.author.bio}</p>
+      
+      </section>
+      <div>
+          <h3 className="text-xl font-bold text-white">{post.author.name}</h3>
+          <p className="text-sm italic text-white">{post.author.bio}</p>
         </div>
-      </section>
-
-    
-      <section className="prose dark:prose-invert">
-        <PortableText value={post.content} />
-      </section>
     </article>
   );
 }
