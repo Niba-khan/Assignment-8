@@ -3,7 +3,7 @@ import React from "react";
 export default function Footer() {
   return (
     <footer className="bg-gray-100">
-      {/* Newsletter Section */}
+
       <div className="text-center py-10">
         <h2 className="text-3xl font-bold text-gray-800">Newsletter</h2>
         <p className="text-lg text-gray-600 mt-4">
@@ -21,7 +21,6 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Footer Bottom Section */}
       <div className="bg-black text-white py-10">
         <div className="flex justify-center space-x-6 text-lg mb-6">
       
