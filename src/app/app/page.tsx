@@ -1,7 +1,7 @@
 
-import BlogCard from "@/components/blogcard";
+import BlogCard from "../components/blogcard";
 import { client } from "../sanity/lib/client"
-import Hero from "@/components/hero";
+import Hero from "../components/hero";
 export default async function Home() {
   const query = `*[_type=='post'] | order(_createdAt asc){
   
